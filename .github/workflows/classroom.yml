@@ -1,0 +1,20 @@
+name: Python Autograding
+
+on: [push]
+
+jobs:
+  autograde:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run demo files
+        run: |
+          python demo/01_variables_and_types.py
+          python demo/02_loops_and_ranges.py
+          python demo/03_lists.py
+          python demo/04_tuples.py
+          python demo/05_dictionaries.py
+          python demo/06_functions.py
